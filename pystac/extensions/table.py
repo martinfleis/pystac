@@ -175,7 +175,7 @@ class TableExtension(
         if v is None:
             self.properties.pop(COLUMNS_PROP, None)
         else:
-            self.properties[COLUMNS_PROP] = v
+            self.properties[COLUMNS_PROP] = [x.to_dict() for x in v]
 
     @property
     def primary_geometry(self) -> Optional[str]:
